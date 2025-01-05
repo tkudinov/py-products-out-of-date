@@ -1,13 +1,13 @@
-import unittest
 from unittest import mock
 import datetime
 from app.main import outdated_products
 
+
 @mock.patch("datetime.date")
-def test_outdated_products(mock_date) -> None:
+def test_outdated_products(mock_date: mock) -> None:
     class CustomDate(datetime.date):
         @classmethod
-        def today(cls):
+        def today(cls) -> datetime:
             return datetime.date(2025, 1, 2)
 
     mock_date.side_effect = CustomDate
