@@ -24,7 +24,8 @@ def products() -> list:
         }
     ]
 
-def test_outdated_products(products) -> None:
+
+def test_outdated_products(products: list) -> None:
     with mock.patch("datetime.date") as mocked_date:
         mocked_date.today.return_value = datetime.date(2022, 2, 2)
         outdated_products(products)
