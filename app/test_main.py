@@ -1,5 +1,4 @@
 import datetime
-import pytest
 from unittest.mock import patch
 from app.main import outdated_products
 
